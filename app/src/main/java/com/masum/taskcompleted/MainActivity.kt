@@ -18,12 +18,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
             }
         }
     }
 
 @Composable
 fun TaskCompleted() {
+    Screen(){
+        Text(text = "All tasks completed")
+        Text(text = "Nice work!")
+    }
+}
+
+@Composable
+fun Screen() {
 
 }
 
