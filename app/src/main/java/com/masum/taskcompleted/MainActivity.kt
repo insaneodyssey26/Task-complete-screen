@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.masum.taskcompleted.ui.theme.TaskCompletedTheme
 
@@ -18,21 +19,24 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
+            TaskCompleted()
             }
         }
     }
 
 @Composable
 fun TaskCompleted() {
-    Screen(){
-        Text(text = "All tasks completed")
-        Text(text = "Nice work!")
-    }
+    Screen(
+        title = stringResource(R.string.all_tasks_completed),
+        greetings = stringResource(R.string.nice_work)
+    )
 }
 
 @Composable
-fun Screen() {
+fun Screen(
+    title: String,
+    greetings: String
+) {
 
 }
 
