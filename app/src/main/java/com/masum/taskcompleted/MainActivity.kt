@@ -18,12 +18,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TaskCompletedTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
-                }
             }
         }
     }
+
+@Composable
+fun TaskCompleted() {
+
 }
 
