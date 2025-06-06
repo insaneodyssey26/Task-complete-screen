@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -19,6 +20,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.masum.taskcompleted.ui.theme.TaskCompletedTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +28,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
+            TaskCompletedTheme {
+                Surface (
+                    modifier = Modifier
+                        .fillMaxSize()
+                ){
+                    MainScreen()
+                }
+            }
         }
     }
 }
@@ -39,6 +48,11 @@ fun MainScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
+        val image = painterResource(R.drawable.ic_task_completed)
+        Image(painter = image, contentDescription = null)
+        Text(
+            text = stringResource(R.string.all_tasks_completed),
+            modifier = Modifier.padding(top = 24.dp, bottom = 8.dp)
+        )
     }
 }
