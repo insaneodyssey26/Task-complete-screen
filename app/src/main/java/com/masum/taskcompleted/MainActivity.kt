@@ -24,24 +24,6 @@ class MainActivity : ComponentActivity() {
         setContent {
 
         }
-        }
     }
-
-@Composable
-fun TaskCompleted() {
-    Screen(
-        title = stringResource(R.string.all_tasks_completed),
-        greetings = stringResource(R.string.nice_work),
-        confirmation = painterResource(R.drawable.ic_task_completed)
-    )
-}
-
-@Composable
-fun Screen(
-    title: String,
-    greetings: String,
-    confirmation: Painter
-) {
-
 }
 
